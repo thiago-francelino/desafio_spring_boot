@@ -8,4 +8,7 @@ Principais Recursos
 
     Consulta de CEP a API viaCep
     Separação dos dados em difirentes tabelas (relação one2one de cliente com contato e endereço)
-    Metodos basicos e CRUD.
+    Uso da DTO
+    Uso de controller
+    Restful
+    Metodos basicos (consulta por id, consulta por nome) e CRUD.
