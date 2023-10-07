@@ -12,3 +12,30 @@ Principais Recursos
     Uso de controller
     Restful
     Metodos basicos (consulta por id, consulta por nome) e CRUD.
+
+Segue a criação das tabelas
+
+CREATE TABLE tb_customeres (
+    id serial PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    registration_date DATE,
+    address_id INT,
+    contact_id INT,
+    FOREIGN KEY (address_id) REFERENCES tb_address(id) ON DELETE CASCADE,
+    FOREIGN KEY (contact_id) REFERENCES tb_cOntact(id) ON DELETE CASCADE
+);
+
+CREATE TABLE tb_address (
+    id serial PRIMARY KEY,
+    postal_code VARCHAR(10),
+    street_address VARCHAR(255),
+    city VARCHAR(100),
+    house_number VARCHAR(10),
+    complement VARCHAR(255)
+);
+
+CREATE TABLE tb_contact (
+    id serial PRIMARY KEY,
+    type VARCHAR(255),
+    text_description VARCHAR(255)
+);
