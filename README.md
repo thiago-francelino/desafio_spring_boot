@@ -39,3 +39,24 @@ CREATE TABLE tb_contact (
     type VARCHAR(255),
     text_description VARCHAR(255)
 );
+
+
+CREATE TABLE tb_brand (
+    id serial PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tb_category (
+    id serial PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    max_qty INT NOT NULL
+);
+
+
+CREATE TABLE tb_product (
+    id serial PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255),
+    category_id INT REFERENCES tb_category(id),
+    brand_id INT REFERENCES tb_brand(id)
+);
